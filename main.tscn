@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b3e8ae6t4iero" path="res://Tak berjudul76_20260714072118.png" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://3ppatsuh3s62" path="res://tombol_keluar.tres" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://c8540vvunnqiu" path="res://keluar_aktif.tres" id="10_efxa6"]
+[ext_resource type="AudioStream" uid="uid://usuc6uh760t5" path="res://Intro.mp3" id="11_efxa6"]
+[ext_resource type="FontFile" uid="uid://bqpmkddinvp00" path="res://Jersey15.ttf" id="12_dg77c"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_g7b7a"]
 
@@ -132,6 +134,17 @@ atlas = ExtResource("8_5vw27")
 region = Rect2(157, 301, 280, 137)
 filter_clip = true
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qx4q"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.56, 1, 0.9559999, 0.5764706)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
 [node name="Node2D" type="Node2D" unique_id=2103738186]
 script = ExtResource("1_h2yge")
 metadata/_edit_vertical_guides_ = [-191.0]
@@ -180,10 +193,15 @@ layer = -1
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=1744264134]
 visibility_layer = 4
 z_index = 100
-offset_left = -10.0
-offset_top = -62.0
-offset_right = 1193.0
-offset_bottom = 711.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -11.0
+offset_right = -16.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("CompressedTexture2D_ayt76")
 expand_mode = 1
@@ -213,3 +231,52 @@ gambar_normal = ExtResource("9_4c57u")
 gambar_hover = ExtResource("10_efxa6")
 gambar_pressed = ExtResource("10_efxa6")
 teks_tombol = "Keluar"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=803564357]
+stream = ExtResource("11_efxa6")
+autoplay = true
+
+[node name="PopupPanel" type="PopupPanel" parent="." unique_id=3748621]
+oversampling_override = 1.0
+mode = 1
+title = "Pengaturan"
+initial_position = 1
+size = Vector2i(600, 300)
+theme_override_styles/panel = SubResource("StyleBoxFlat_6qx4q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel" unique_id=1830173939]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer" unique_id=1315090382]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36632273, 0.54263157, 0.9356324, 1)
+theme_override_fonts/font = ExtResource("12_dg77c")
+theme_override_font_sizes/font_size = 30
+text = "Pengaturan"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PopupPanel/VBoxContainer" unique_id=2688168]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PopupPanel/VBoxContainer/CenterContainer" unique_id=1925402046]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4851, 0.68705994, 0.99, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("12_dg77c")
+theme_override_font_sizes/font_size = 30
+text = "Keluar"
+flat = true
+
+[connection signal="ready" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_ready"]
+[connection signal="pressed" from="PopupPanel/VBoxContainer/CenterContainer/Button" to="." method="_on_button_pressed"]
