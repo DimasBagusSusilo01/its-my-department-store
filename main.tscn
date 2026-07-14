@@ -5,13 +5,13 @@
 [ext_resource type="Script" uid="uid://d2m580wswuos8" path="res://bg.gd" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cixgk88nqw850" path="res://Tak berjudul76_20260714072132.png" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://c8pnjmoiaw4r0" path="res://tombol.tscn" id="4_lquwl"]
-[ext_resource type="Texture2D" uid="uid://bnyipqf8r81uw" path="res://Tak berjudul76_20260714072130.png" id="6_5vw27"]
 [ext_resource type="Texture2D" uid="uid://cnti58i5yxa6k" path="res://Tak berjudul76_20260714072114.png" id="6_kek77"]
-[ext_resource type="Texture2D" uid="uid://b3e8ae6t4iero" path="res://Tak berjudul76_20260714072118.png" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://3ppatsuh3s62" path="res://tombol_keluar.tres" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://c8540vvunnqiu" path="res://keluar_aktif.tres" id="10_efxa6"]
+[ext_resource type="Texture2D" uid="uid://bm8xg3sdhknak" path="res://tombol_pengaturan.tres" id="11_dg77c"]
 [ext_resource type="AudioStream" uid="uid://usuc6uh760t5" path="res://Intro.mp3" id="11_efxa6"]
 [ext_resource type="FontFile" uid="uid://bqpmkddinvp00" path="res://Jersey15.ttf" id="12_dg77c"]
+[ext_resource type="Texture2D" uid="uid://dfcsm71kkh8tm" path="res://pengaturan_aktif.tres" id="12_ycdy4"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_g7b7a"]
 
@@ -119,21 +119,6 @@ atlas = ExtResource("6_kek77")
 region = Rect2(155, 156, 280, 137)
 filter_clip = true
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
-atlas = ExtResource("6_5vw27")
-region = Rect2(148.618, 295, 285, 146)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
-atlas = ExtResource("8_5vw27")
-region = Rect2(157, 301, 280, 137)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
-atlas = ExtResource("8_5vw27")
-region = Rect2(157, 301, 280, 137)
-filter_clip = true
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qx4q"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 20
@@ -144,6 +129,15 @@ corner_radius_top_left = 60
 corner_radius_top_right = 60
 corner_radius_bottom_right = 60
 corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dg77c"]
+texture = ExtResource("11_dg77c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ycdy4"]
+texture = ExtResource("12_ycdy4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w48qg"]
+texture = ExtResource("12_ycdy4")
 
 [node name="Node2D" type="Node2D" unique_id=2103738186]
 script = ExtResource("1_h2yge")
@@ -215,15 +209,6 @@ gambar_hover = SubResource("AtlasTexture_ycdy4")
 gambar_pressed = SubResource("AtlasTexture_w48qg")
 teks_tombol = "Bermain"
 
-[node name="tombol2" parent="." unique_id=743417098 instance=ExtResource("4_lquwl")]
-z_index = 10
-position = Vector2(124, 245)
-scale = Vector2(0.8, 0.8)
-gambar_normal = SubResource("AtlasTexture_kek77")
-gambar_hover = SubResource("AtlasTexture_4c57u")
-gambar_pressed = SubResource("AtlasTexture_efxa6")
-teks_tombol = "Pengaturan"
-
 [node name="tombol3" parent="." unique_id=1653746919 instance=ExtResource("4_lquwl")]
 position = Vector2(127, 389)
 scale = Vector2(0.8, 0.8)
@@ -249,8 +234,8 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
+offset_right = 580.0
+offset_bottom = 280.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -267,7 +252,7 @@ horizontal_alignment = 1
 [node name="CenterContainer" type="CenterContainer" parent="PopupPanel/VBoxContainer" unique_id=2688168]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PopupPanel/VBoxContainer/CenterContainer" unique_id=1925402046]
+[node name="tutup" type="Button" parent="PopupPanel/VBoxContainer/CenterContainer" unique_id=1925402046]
 custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4851, 0.68705994, 0.99, 1)
@@ -278,5 +263,22 @@ theme_override_font_sizes/font_size = 30
 text = "Keluar"
 flat = true
 
+[node name="pengaturan" parent="." unique_id=1357418268 instance=ExtResource("4_lquwl")]
+position = Vector2(125.99999, 244.99998)
+scale = Vector2(0.8, 0.8)
+gambar_normal = ExtResource("11_dg77c")
+gambar_hover = ExtResource("12_ycdy4")
+gambar_pressed = ExtResource("12_ycdy4")
+teks_tombol = "Pengaturan"
+
+[node name="Button" parent="pengaturan" index="0" unique_id=2088380504]
+theme_override_styles/normal = SubResource("StyleBoxTexture_dg77c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ycdy4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w48qg")
+text = "Pengaturan"
+
 [connection signal="ready" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_ready"]
-[connection signal="pressed" from="PopupPanel/VBoxContainer/CenterContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PopupPanel/VBoxContainer/CenterContainer/tutup" to="." method="tutup"]
+[connection signal="pressed" from="pengaturan/Button" to="." method="popup_muncul"]
+
+[editable path="pengaturan"]

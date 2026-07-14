@@ -20,3 +20,5 @@ theme_override_fonts/font = ExtResource("2_fyqv3")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxTexture_5o7dd")
 text = "Tombol"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed" binds= ["pengaturan"]]

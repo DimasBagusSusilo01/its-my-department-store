@@ -17,5 +17,9 @@ func _on_audio_stream_player_ready() -> void:
 	pass # Replace with function body.
 
 
-func _on_button_pressed() -> void:
+func tutup() -> void:
 	popup.hide()
+
+
+func popup_muncul() -> void:
+	popup.popup_centered()
