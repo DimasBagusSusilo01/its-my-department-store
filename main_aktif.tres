@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://ceecl283e8jjl"]
+
+[ext_resource type="Texture2D" uid="uid://cnti58i5yxa6k" path="res://Tak berjudul76_20260714072114.png" id="1_h4s83"]
+
+[resource]
+atlas = ExtResource("1_h4s83")
+region = Rect2(155, 156, 280, 137)
+filter_clip = true

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c8pnjmoiaw4r0"]
+
+[ext_resource type="Script" uid="uid://bttakvtl58lpd" path="res://tombol.gd" id="1_g4nhm"]
+[ext_resource type="FontFile" uid="uid://bqpmkddinvp00" path="res://Jersey15.ttf" id="2_fyqv3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5o7dd"]
+content_margin_left = 69.0
+content_margin_top = 69.0
+content_margin_right = 69.0
+content_margin_bottom = 69.0
+
+[node name="tombol" type="Node2D" unique_id=719002597]
+script = ExtResource("1_g4nhm")
+
+[node name="Button" type="Button" parent="." unique_id=2088380504]
+offset_right = 294.61542
+offset_bottom = 138.0
+scale = Vector2(1.3, 1.3)
+theme_override_fonts/font = ExtResource("2_fyqv3")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxTexture_5o7dd")
