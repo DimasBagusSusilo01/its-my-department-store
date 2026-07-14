@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://jska8is4dss"]
+
+[ext_resource type="Texture2D" uid="uid://cnwcbhva5wtsv" path="res://Tak berjudul76_20260714072136.png" id="1_s2ta7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g7b7a"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ayt76"]
+load_path = "res://.godot/imported/Tak berjudul76_20260714072107.png-e28f07e11518586985306dc1fbe2b9c4.ctex"
+
+[sub_resource type="Animation" id="Animation_7a8ye"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(596, 1012)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(592, 293)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(596, 1641)]
+}
+
+[sub_resource type="Animation" id="Animation_0a7ni"]
+resource_name = "bg1"
+length = 2.0333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(596, 1012), Vector2(590, -358)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(595, 294), Vector2(595, -1077)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(596, 1641), Vector2(591, 349)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y72e6"]
+_data = {
+&"RESET": SubResource("Animation_7a8ye"),
+&"bg1": SubResource("Animation_0a7ni")
+}
+
+[node name="Node2D" type="Node2D" unique_id=2103738186]
+metadata/_edit_vertical_guides_ = [-191.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=171178126]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=320079112]
+modulate = Color(1, 0.94509804, 0.9019608, 1)
+self_modulate = Color(1, 0.94509804, 0.9019608, 1)
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_g7b7a")
+expand_mode = 1
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=436227035]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=1744264134]
+visibility_layer = 4
+z_index = 100
+offset_left = 3.0
+offset_top = -62.0
+offset_right = 1193.0
+offset_bottom = 711.0
+mouse_filter = 2
+texture = SubResource("CompressedTexture2D_ayt76")
+expand_mode = 1
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1566261735]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer3" unique_id=9858706]
+modulate = Color(1, 1, 1, 0.3647059)
+position = Vector2(596, 1012)
+texture = ExtResource("1_s2ta7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer3" unique_id=335378515]
+libraries/ = SubResource("AnimationLibrary_y72e6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer3" unique_id=918816662]
+modulate = Color(1, 1, 1, 0.3647059)
+position = Vector2(592, 293)
+texture = ExtResource("1_s2ta7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer3" unique_id=1612275481]
+modulate = Color(1, 1, 1, 0.3647059)
+position = Vector2(596, 1641)
+texture = ExtResource("1_s2ta7")
