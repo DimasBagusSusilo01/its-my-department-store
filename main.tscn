@@ -120,13 +120,13 @@ atlas = ExtResource("6_kek77")
 region = Rect2(155, 156, 280, 137)
 filter_clip = true
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2cqfq"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ycdy4"]
 texture = ExtResource("9_4c57u")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yaehf"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w48qg"]
 texture = ExtResource("10_efxa6")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_074og"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vivmo"]
 texture = ExtResource("10_efxa6")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qx4q"]
@@ -140,13 +140,13 @@ corner_radius_top_right = 60
 corner_radius_bottom_right = 60
 corner_radius_bottom_left = 60
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ycdy4"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2cqfq"]
 texture = ExtResource("11_dg77c")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w48qg"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yaehf"]
 texture = ExtResource("12_ycdy4")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vivmo"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_074og"]
 texture = ExtResource("12_ycdy4")
 
 [node name="Node2D" type="Node2D" unique_id=2103738186]
@@ -200,10 +200,10 @@ z_index = 100
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -85.0
-offset_top = 41.0
-offset_right = -85.0
-offset_bottom = 41.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -228,9 +228,9 @@ gambar_pressed = ExtResource("10_efxa6")
 teks_tombol = "Keluar"
 
 [node name="Button" parent="tombol3" index="0" unique_id=2088380504]
-theme_override_styles/normal = SubResource("StyleBoxTexture_2cqfq")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_yaehf")
-theme_override_styles/hover = SubResource("StyleBoxTexture_074og")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ycdy4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_w48qg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vivmo")
 text = "Keluar"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=803564357]
@@ -244,6 +244,7 @@ mode = 1
 title = "Pengaturan"
 initial_position = 1
 size = Vector2i(600, 300)
+visible = true
 theme_override_styles/panel = SubResource("StyleBoxFlat_6qx4q")
 
 [node name="Control" type="Control" parent="PopupPanel" unique_id=263447799]
@@ -317,6 +318,7 @@ text = "Volume Efek"
 layout_mode = 2
 max_value = 1.0
 step = 0.05
+value = 1.0
 
 [node name="CenterContainer" type="CenterContainer" parent="PopupPanel/Control/GridContainer" unique_id=1180027326]
 layout_mode = 2
@@ -341,9 +343,9 @@ gambar_pressed = ExtResource("12_ycdy4")
 teks_tombol = "Pengaturan"
 
 [node name="Button" parent="pengaturan" index="0" unique_id=2088380504]
-theme_override_styles/normal = SubResource("StyleBoxTexture_ycdy4")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_w48qg")
-theme_override_styles/hover = SubResource("StyleBoxTexture_vivmo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2cqfq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yaehf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_074og")
 text = "Pengaturan"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1490547347]
